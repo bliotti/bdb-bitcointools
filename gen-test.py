@@ -1,4 +1,4 @@
-[Forwarded from coinGuyBri]
+
 #testnet_generator
 
 from pycoin.ecdsa import generator_secp256k1 as g
