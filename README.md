@@ -1,2 +1,5 @@
-# bdb-bitcointools
-Simple address generator
+## bdb-bitcointools
+
+Simple Bitcoin Testnet address generator
+
+secp256k1
