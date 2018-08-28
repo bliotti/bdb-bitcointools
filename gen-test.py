@@ -1,10 +1,20 @@
 
-#testnet_generator
+# Genereate Bitcoin testnet public addresses from a arbitrary secret.
 
+## imports
+
+# Secp256k1 Curve and constants in sextuple form 
 from pycoin.ecdsa import generator_secp256k1 as g
+
+# Convert binary to ascii and vise versa
 from binascii import hexlify,unhexlify
+
+# Encoding base58 format and hash160
 from pycoin.encoding import b2a_hashed_base58,hash160
 
+
+
+## create random secret for seeding you test net address
 secret = 8675309 # example
 x,y = (secret*g).pair()
 pub = g.__class__(g.curve(), x,y)
@@ -14,6 +24,8 @@ hex_x = hex_x[:-1]
 hex_y = hex(y)
 hex_y = hex_y[2:]
 hex_y = hex_y[:-1]
+
+#confirm it is an odd number
 y % 2 #odd
 
 #compressed and y % 2 =1 so odd -> preprend 03
